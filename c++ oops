@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+class Engine {
+private:
+    int horsepower; // Encapsulated data
+
+public:
+    // Member Initialization List
+    Engine(int hp) : horsepower(hp) {}
+
+    // Const-correct getter
+    int getHorsepower() const { return horsepower; }
+
+    ~Engine() {
+        std::cout << "Engine with " << horsepower << " HP destroyed.\n";
+    }
+};
+
+int main() {
+    Engine e(500);
+    std::cout << "Engine power: " << e.getHorsepower() << std::endl;
+    return 0; // Destructor called automatically
+}
